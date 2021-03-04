@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>掲示板</title> 
+  <link rel="stylesheet" href="../public/css/bootstrap-grid.min.css">
+  <link rel="stylesheet" href="../public/css/bootstrap-reboot.min.css">
+  <link rel="stylesheet" href="../public/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../public/css/custom.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+</head>
+<body class="">
+    
+    <header class="my-5">
+        <h1 class="my-2 mx-4 py-2 px-4">ようこそ！掲示板へ！</h1>
+    </header>
+
+    <main class="main container border border-right border-left border-success">
+
+        <!-- 投稿ボタン -->
+        <div>
+            <div class="login row justify-content-around p-4 mt-3 w-100">
+                <a class="w-50 border">◯◯さん、ようこそ！</a>　<!-- ユーザー名が入るようにする -->
+                <button type="button" class="w-25 btn btn-outline-primary" id="login-show">投稿</button>
+                <div> <!-- ログアウト -->
+                    <form action="/signout" method="post">
+                        <input type="hidden" name="_method" value="DELETE">
+                        <input type="submit" value="サインアウト">
+                      </form>
+                </div>
+            </div>
+
+            <!-- モーダル -->
+            <!-- ログインモーダル -->
+            <div class="login-modal-wrapper" id="login-modal">
+                <div class="modal1">
+                    <div class="close-modal">
+                        <i class="fa fa-2x fa-times"></i>
+                    </div>
+                    <div id="login-form">
+                        <h2>ログイン</h2>
+                        <form action="/login_signup" method="post" enctype="multipart/form-data">
+                            <div>
+                                <label for="title">タイトル<br></label>
+                                <input type="email" name="email">
+                            </div>
+                            <div>
+                                <label for="content">内容</label>
+                                <textarea class="w-75"></textarea>
+                            </div>
+                            <div>
+                                <label for="img">画像</label>
+                                <input type="file" name="img">
+                            </div>
+                            <input type="submit" value="投稿">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 投稿 -->
+        <div class="post mx-auto px-5 py-2 my-5 border">
+            <!-- ユーザー名 -->
+            <div class="w-100 pb-3 pt-5">
+                <p class="border">ユーザー名</p>
+            </div>
+            <!-- 投稿内容 -->
+            <div class="w-100 pb-5">
+                <p class="border">
+                    ここに投稿内容が反映される<br>ここに投稿内容が反映される<br>ここに投稿内容が反映される<br>ここに投稿内容が反映される<br>ここに投稿内容が反映される<br>ここに投稿内容が反映される<br>ここに投稿内容が反映される<br>
+                </p>
+            </div>
+
+        </div>
+
+    </main>
+    
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="../public/js/bootstrap.bundle.min.js"></script>
+    <script src="../public/js/bootstrap.min.js"></script>
+    <script src="../public/js/custom.js"></script>
+</body>
+</html>
+
+

@@ -1,0 +1,43 @@
+<div class="login row justify-content-around p-5">
+            <button type="button" class="mx-auto btn btn-outline-primary" id="login-show">ログイン</button>
+        </div>
+        <div class="signup row justify-content-around p-5">
+            <button type="button" class="btn btn-outline-secondary" id="signup-show">サインアップ</button>
+        </div>
+
+        <!-- モーダル -->
+        <!-- ログインモーダル -->
+        <div class="login-modal-wrapper" id="login-modal">
+            <div class="modal1">
+              <div class="close-modal">
+                <i class="fa fa-2x fa-times"></i>
+              </div>
+              <div id="login-form">
+                <h2>ログイン</h2>
+                <form action="/login_signup" method="post">
+                  <input class="form-control" type="text" name="email" placeholder="メールアドレス">
+                  <input class="form-control" type="password" name="password" placeholder="パスワード">
+                  <input type="submit" value="ログイン">
+                </form>
+              </div>
+            </div>
+          </div>
+        <!-- サインアップモーダル -->
+        <div class="signup-modal-wrapper" id="signup-modal">
+            <div class="modal2">
+              <div class="close-modal">
+                <i class="fa fa-2x fa-times"></i>
+              </div>
+              <div id="signup-form">
+                <h2>新規登録</h2>
+                <form action="/login_signup" method="post">
+                  <input class="form-control" type="text" name="name" placeholder="名前">
+                  <input class="form-control" type="email" name="email" placeholder="メールアドレス">
+                  <input class="form-control" type="password" name="password" placeholder="パスワード">
+                  <input type="submit" value="新規登録">
+                </form>
+              </div>
+            </div>
+          </div>
+
+        <!-- モーダル（終了） -->

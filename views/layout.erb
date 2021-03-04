@@ -1,0 +1,33 @@
+<%#　　　 <main>の部分だけ別ファイルにする　　　 %>
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>掲示板</title> 
+  <link rel="stylesheet" href="http://localhost:4567/css/bootstrap-grid.min.css">
+  <link rel="stylesheet" href="http://localhost:4567/css/bootstrap-reboot.min.css">
+  <link rel="stylesheet" href="http://localhost:4567/css/bootstrap.min.css">
+  <link rel="stylesheet" href="http://localhost:4567/css/custom.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+</head>
+<body class="">
+    
+    <header class="my-5">
+        <h1 class="my-2 mx-4 py-2 px-4">ようこそ！掲示板へ！</h1>
+    </header>
+
+    <main class="main container border border-right border-left border-success">
+
+        <%= yield %>
+        
+    </main>
+    
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="http://localhost:4567/js/bootstrap.bundle.min.js"></script>
+    <script src="http://localhost:4567/js/bootstrap.min.js"></script>
+    <script src="http://localhost:4567/js/custom.js"></script>
+</body>
+</html>
+

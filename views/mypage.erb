@@ -1,0 +1,72 @@
+<!-- 投　稿　ボ　タ　ン　 -->
+        <div>
+            <div class="login row justify-content-around p-4 mt-3 w-100">
+                <a class="w-50 border"><%= @name %>さん、ようこそ！</a>　<!-- ユーザー名が入るようにする -->
+                <button type="button" class="w-25 btn btn-outline-primary" id="posts-show">投稿</button>
+                <div> <!-- サ　イ　ン　ア　ウ　ト　 -->
+                    <form action="/signout" method="post">
+                        <input type="hidden" name="_method" value="DELETE">
+                        <input type="submit" value="サインアウト">
+                      </form>
+                </div>
+            </div>
+
+            <!-- 　モ　ー　ダ　ル　 -->
+            <!-- 　投　稿　モ　ー　ダ　ル　 -->
+            <div class="posts-modal-wrapper" id="posts-modal">
+                <div class="modal1">
+                    <div class="close-modal">
+                        <i class="fa fa-2x fa-times"></i>
+                    </div>
+                    <div id="login-form">
+                        <h2>投稿</h2>
+                        <form action="/mypage" method="post" enctype="multipart/form-data">
+                            <div>
+                                <label for="title">タイトル<br></label>
+                                <input type="text" name="title">
+                            </div>
+                            <div>
+                                <label for="content">内容</label>
+                                <textarea class="w-75" name="content"></textarea>
+                            </div>
+                            <div>
+                                <label for="img">画像</label>
+                                <input type="file" name="img">
+                            </div>
+                            <input type="submit" value="投稿">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 　投　稿　 -->
+        <% if @user_posts.nil? %>
+        <% else %>
+            <% @user_posts.each do |user_post| %>
+                <div id="post" class="post mx-auto px-5 py-2 my-5 border">
+                    <!-- 　タ　イ　ト　ル　 -->
+                    <div class="h2 font-weight-bold w-100 pb-3 pt-5">
+                        <p class="border">
+                            タイトル：<%= user_post["title"] %>
+                        </p>
+                    </div>
+                    <!-- 　投　稿　内　容　 -->
+                    <div  class="row w-100 pb-5">
+                        <p class="border 
+                                <% if user_post["img_path"].nil?%>
+                                    col-12
+                                <% else %> 
+                                    col-sm-6
+                                <% end %> ">
+                            内容：<%= user_post["content"] %>
+                        </p>
+                        <% if user_post["img_path"].nil? %>
+                        <%# 何もない %>
+                        <% else %>
+                            <img class="post_img w-50 h-50 col-sm-6" src="<%= user_post["img_path"] %>">
+                        <% end %>
+                    </div>
+                </div>
+            <% end %>
+        <% end %>
